@@ -39,7 +39,7 @@ body {
 /* Transparent Header - Kept as requested */
 .transparent-header {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 1.2rem 0;
