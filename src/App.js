@@ -134,7 +134,7 @@ const App = () => {
         <div className="header-content">
           <div className="logo">
             <i className="fas fa-blog"></i>
-            <span>WriteZone</span>
+            <span>BlogNewq</span>
           </div>
           <nav>
             <ul>
@@ -179,7 +179,7 @@ const App = () => {
     <section className="hero">
       <div className="container">
         <h1>Share Your Stories With The World</h1>
-        <p>WriteZone is the modern platform for writers and readers to connect, share ideas, and explore new perspectives.</p>
+        <p>BlogNewq is the modern platform for writers and readers to connect, share ideas, and explore new perspectives.</p>
         <div className="hero-buttons">
           <button className="btn btn-primary">
             <i className="fas fa-pen-fancy"></i> Start Writing
@@ -309,8 +309,8 @@ const App = () => {
   const Sidebar = () => (
     <div className="sidebar">
       <div className="sidebar-widget">
-        <h3 className="widget-title">About WriteZone</h3>
-        <p>WriteZone is a modern blogging platform that empowers writers to share their stories and connect with readers worldwide.</p>
+        <h3 className="widget-title">About BlogNewq</h3>
+        <p>BlogNewq is a modern blogging platform that empowers writers to share their stories and connect with readers worldwide.</p>
         <div className="social-links">
           <button><i className="fab fa-facebook-f"></i></button>
           <button><i className="fab fa-twitter"></i></button>
@@ -365,7 +365,7 @@ const App = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-column">
-            <h3>WriteZone</h3>
+            <h3>BlogNewq</h3>
             <p>A modern blogging platform for writers and readers to connect and share ideas.</p>
           </div>
           <div className="footer-column">
@@ -386,7 +386,7 @@ const App = () => {
           </div>
         </div>
         <div className="copyright">
-          &copy; 2023 WriteZone. All rights reserved.
+          &copy; 2023 BlogNewq. All rights reserved.
         </div>
       </div>
     </footer>
@@ -396,7 +396,7 @@ const App = () => {
     <div className="modal">
       <div className="modal-content">
         <div className="modal-header">
-          <h2>{isLoginMode ? 'Login to WriteZone' : 'Join WriteZone'}</h2>
+          <h2>{isLoginMode ? 'Login to BlogNewq' : 'Join BlogNewq'}</h2>
           <span className="close-modal" onClick={() => setShowAuthModal(false)}>&times;</span>
         </div>
         <div className="modal-body">
