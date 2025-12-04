@@ -303,11 +303,6 @@ const App = () => {
     setNewPost({ ...newPost, content }); // Post content update karna
   };
 
-  // Editor mein text format karna
-  const formatText = (command) => {
-    document.execCommand(command, false, null); // Browser command execute karna
-  };
-
   // "Read More" click karne par single post view dikhana
   const handleReadMore = (post) => {
     setSelectedPost(post); // Selected post set karna
@@ -634,7 +629,13 @@ const App = () => {
       <div className="modal">
         <div className="modal-header">
           <h3>Create New Post</h3>
-          <button onClick={() => setShowWriteModal(false)} className="close-btn">&times;</button>
+          <button 
+            type="button" 
+            onClick={() => setShowWriteModal(false)} 
+            className="close-btn"
+          >
+            &times;
+          </button>
         </div>
         <form onSubmit={handleCreatePost} className="modal-form">
           <input
@@ -650,7 +651,12 @@ const App = () => {
               {newPost.tags.map((tag, i) => (
                 <span key={i} className="tag">
                   {tag}
-                  <button type="button" onClick={() => removeTag(i)}>&times;</button>
+                  <button 
+                    type="button" 
+                    onClick={() => removeTag(i)}
+                  >
+                    &times;
+                  </button>
                 </span>
               ))}
             </div>
@@ -661,17 +667,13 @@ const App = () => {
             />
           </div>
 
-          <div className="editor-tools">
-            <button type="button" onClick={() => formatText('bold')}><b>B</b></button>
-            <button type="button" onClick={() => formatText('italic')}><i>I</i></button>
-            <button type="button" onClick={() => formatText('underline')}><u>U</u></button>
-          </div>
-
-          <div
-            className="editor"
-            contentEditable
-            onInput={(e) => handleEditorInput(e.target.innerHTML)}
+          <textarea
+            className="editor-textarea"
+            value={newPost.content}
+            onChange={(e) => setNewPost({...newPost, content: e.target.value})}
             placeholder="Write your post here..."
+            rows="10"
+            required
           />
 
           <button type="submit" className="submit-btn">Publish Post</button>
@@ -695,7 +697,13 @@ const App = () => {
         <div className="modal">
           <div className="modal-header">
             <h3>{isLoginMode ? 'Login' : 'Register'}</h3>
-            <button onClick={() => setShowAuthModal(false)} className="close-btn">&times;</button>
+            <button 
+              type="button" 
+              onClick={() => setShowAuthModal(false)} 
+              className="close-btn"
+            >
+              &times;
+            </button>
           </div>
           <div className="modal-body">
             {authError && <div className="error-message">{authError}</div>}
@@ -738,10 +746,14 @@ const App = () => {
             </form>
             <div className="auth-switch">
               {isLoginMode ? "Don't have an account? " : "Already have an account? "}
-              <button onClick={() => {
-                setIsLoginMode(!isLoginMode);
-                setAuthError('');
-              }} className="switch-btn">
+              <button 
+                type="button"
+                onClick={() => {
+                  setIsLoginMode(!isLoginMode);
+                  setAuthError('');
+                }} 
+                className="switch-btn"
+              >
                 {isLoginMode ? 'Register' : 'Login'}
               </button>
             </div>
